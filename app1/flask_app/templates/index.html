@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is me displaying all the users</h1>
+<table>
+    <tr>
+        <td>user name</td>
+        <td>options</td>
+    </tr>
+    {% for user in users %}
+    <tr>
+        <td>
+            {{user.first_name}} {{user.last_name}}
+        </td>
+        <td>place holder</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
