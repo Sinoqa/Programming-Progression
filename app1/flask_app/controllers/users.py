@@ -6,3 +6,9 @@ from flask_app.models import user
 def index():
     all_users = user.User.get_all_users()
     return render_template('index.html', users = all_users)
+
+
+@app.route('/users/delete/<id>')
+def delete_user(id):
+    user.User.delete_user(id)
+    return redirect ('/')
