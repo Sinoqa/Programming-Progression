@@ -13,14 +13,19 @@
         <td>user name</td>
         <td>options</td>
     </tr>
-    {% for user in users %}
+{% for user in users %}
     <tr>
         <td>
             {{user.first_name}} {{user.last_name}}
         </td>
-        <td>place holder</td>
+        <td>
+            <a href="/users/delete/{{user.id}}">
+             <button>delete</button>
+            </a>
+        </td>
     </tr>
-    {% endfor %}
+{% endfor %}
+
 </table>
 </body>
 </html>
