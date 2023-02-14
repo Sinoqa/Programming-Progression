@@ -22,9 +22,19 @@
             <a href="/users/delete/{{user.id}}">
              <button>delete</button>
             </a>
+            <a href="/users/update/{{user.id}}">
+                <button>update</button>
+            </a>
+        </td>
+        <td>
+            <a href="/users/profile/{{user.id}}">
+                <button>profile</button>
+               </a>
         </td>
     </tr>
 {% endfor %}
+<a href="/users/create">
+    <button>Create</button>
 
 </table>
 </body>
