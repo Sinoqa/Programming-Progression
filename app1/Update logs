@@ -14,3 +14,4 @@ Added a book model
 Updated some user routes(POST, GET methods)
 Added profile and create user template
 Added books to controllers
+Updated the ERD schema
