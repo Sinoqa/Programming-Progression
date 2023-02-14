@@ -7,3 +7,9 @@ added delete function to the website. Rested a little but so not much progress.
 
 2/12/2023
 Added an update/edit method for users to change the names on the data base. Used 'GET' and 'POST' method on a single function.
+
+2/13/2023
+Added a show profile method for users to show their profile and the books they read.
+Added a book model
+Updated some user routes(POST, GET methods)
+Added profile and create user template
