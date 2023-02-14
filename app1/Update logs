@@ -13,3 +13,4 @@ Added a show profile method for users to show their profile and the books they r
 Added a book model
 Updated some user routes(POST, GET methods)
 Added profile and create user template
+Added books to controllers
