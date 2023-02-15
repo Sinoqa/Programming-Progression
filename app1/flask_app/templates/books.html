@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>This is me displaying all the Books</h1>
+<table>
+    <tr>
+        <td>Books</td>
+        <td>options</td>
+    </tr>
+{% for book in books %}
+    <tr>
+        <td>
+            <b>{{book.title}} - {{book.author}}</b>
+        </td>
+        <td><a href="book/edit/{{book.id}}"><button>edit</button></a></td>
+    </tr>
+    <tr>
+        <td>{{book.thoughts}}</td>
+    </tr>
+{% endfor %}
+
+</table>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update book</title>
+</head>
+<body>
+    <h1>edit book</h1>
+    <form action="/book/edit/{{book.id}}" method = 'POST'>
+        <input type="hidden" name="id" value=" {{book.id}}  ">
+        <label>
+            Book Name:
+            <input type="text" name="title" value="{{book.title}}">
+        </label>
+        <label>
+            Author name:
+            <input type="text" name="author" value="{{book.author}}">
+        </label>
+        <label>
+            thoughts:
+            <input type="text" name="thoughts" value="{{book.thoughts}}">
+        </label>
+        <input type="submit" value="submit Edits">
+            
+    </form>
+</body>
+</html>
