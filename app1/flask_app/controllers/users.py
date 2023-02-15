@@ -1,6 +1,7 @@
 from flask_app import app
 from flask import render_template, redirect, request, session, flash
 from flask_app.models import user, book
+from flask_app.controllers import books
 
 @app.route('/')
 def index():
@@ -10,7 +11,7 @@ def index():
 
 @app.route('/users/profile/<id>')
 def show_user_profile(id):
-    this_user = book.Book.get_all_books_by_user(id)   
+    this_user = user.User.get_user_id(id)   
     return render_template('profile.html', user = this_user)
 
 
