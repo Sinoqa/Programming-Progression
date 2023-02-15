@@ -15,3 +15,11 @@ Updated some user routes(POST, GET methods)
 Added profile and create user template
 Added books to controllers
 Updated the ERD schema
+
+
+2/14/2023
+Completed book model
+Added edit book
+Added show all books
+Added the books that the user have read in their profiles
+
