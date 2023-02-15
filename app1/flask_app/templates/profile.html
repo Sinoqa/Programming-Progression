@@ -10,7 +10,16 @@
     <h1>{{ user.first_name }} {{user.last_name}}</h1>
 
     {% for book in user.books %}
-        <h2>{{user.books.title}}</h2>
+        <table>
+            <tr>
+                <td><strong>{{book.title}}</td></strong>
+                <td>{{book.author}}</td>             
+            </tr>
+            <tr>
+                <td>{{book.thoughts}}</td>
+                <td><a href="/book/edit/{{book.id}}"><button>click here</button></a></td>
+            </tr>
+        </table>
     {% endfor %} 
 
 
