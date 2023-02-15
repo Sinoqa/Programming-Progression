@@ -2,7 +2,6 @@ from flask_app.config.mysqlconnection import MySqlConnection, connectToMySql
 from flask_app import app
 
 
-
 class Book:
     DB = "mydb"
     def __init__(self, data):
@@ -19,7 +18,7 @@ class Book:
     def create_book(cls, data):
         query = "INSERT INTO books (title, author, thoughts, users_id) VALUES (%(title)s, %(author)s, %(thoughts)s, %(users_id)s, );"
         return MySqlConnection(cls.DB).query_db(query, data)
-
+ 
 
     @classmethod
     def get_all_books(cls):
@@ -34,38 +33,45 @@ class Book:
 
     @classmethod
     def get_all_books_by_user(cls, data):
-        query = "SELECT * FROM users JOIN books ON users.id = books.user_id WHERE users.id = %(id)s;"
+        query = "SELECT * FROM users JOIN books ON users.id = books.users_id WHERE users.id = %(id)s;"
         results = connectToMySql(cls.DB).query_db(query, data)
         return results
  
 
 
 
-    @classmethod
-    def get_book_by_id(cls,id):
-        data = {'id' : id}
-        query = "SELECT * FROM books WHERE id = %(id)s;"
-        result = connectToMySql(cls.DB).query_db(query, data)
 
     
     @classmethod
     def get_book_by_id(cls,id):
         data = {'id' : id}
-        query = "SELECT * FROM books WHERE users_id = %(id)s;"
+        query = "SELECT * FROM books WHERE books.id = %(id)s;"
         result = connectToMySql(cls.DB).query_db(query, data)
+        results = cls(result[0])
         books = []
         for book in result:
-            books.append(cls[book])
-        return book
+            data = {
+                'title' : book['title'],
+                'author' : book['author'],
+                'thoughts' : book['thoughts'],
+                'created_at': book['created_at'],
+                'updated_at': book['updated_at'],
+                'id' : book['id']
+            }
+            books.append(data)
+        print(books)
+        return results
 
 
     @classmethod
     def update_book(cls, data):
-        query = "UPDATE books SET title= %(title)s, author= %(author)s, thoughts= %(thoughts)s;"
+        query = "UPDATE books SET title= %(title)s, author= %(author)s, thoughts= %(thoughts)s WHERE id =%(id)s;"
         result = connectToMySql(cls.DB).query_db(query, data)
+        return result
 
     @classmethod
     def delete_book_by_id(cls, id):
         data = {'id':id}
         query = "DELETE FROM books WHERE id = %(id)s;"
         result = connectToMySql(cls.DB).query_db(query, data)
+        return result
