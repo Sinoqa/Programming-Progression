@@ -13,66 +13,17 @@
 <div>
     <table>
         <tr>
-            <td>
-                Tulips 
-            </td>
-            <td>1</td>
-        </tr>
+            {% for flower in flowers %}
+            <td>{{flower.flower_type}}</td>
+            
+           
+        </tr>     
         <tr>
-            <td>Price:</td>
-            <td>100$</td>
+            <td>Price : </td>
+            <td> - {{flower.amount}}</td>
+            <td><a href="/flowers/buy/{{flower.id}}"><button>buy me!</button></a></td>
         </tr>
-        <tr>
-            <td>
-                <a href=""><button>buy me!</button></a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Tulips 
-            </td>
-            <td>1</td>
-        </tr>
-        <tr>
-            <td>Price:</td>
-            <td>100$</td>
-        </tr>
-        <tr>
-            <td>
-                <a href=""><button>buy me!</button></a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Tulips 
-            </td>
-            <td>1</td>
-        </tr>
-        <tr>
-            <td>Price:</td>
-            <td>100$</td>
-        </tr>
-        <tr>
-            <td>
-                <a href=""><button>buy me!</button></a>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                Tulips 
-            </td>
-            <td>1</td>
-        </tr>
-        <tr>
-            <td>Price:</td>
-            <td>{{price}}</td>
-        </tr>
-        <tr>
-            <td>
-                <a href=""><button>buy me!</button></a>
-            </td>
-        </tr>
-        
+          {% endfor %}  
     </table>
 </div>
 </body>

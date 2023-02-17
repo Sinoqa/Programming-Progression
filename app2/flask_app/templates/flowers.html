@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of flowers</title>
+</head>
+<body>
+    <h1>Hi these are all the flowers</h1>
+
+    <table>
+        <tr style="border-style: dotted;border-bottom: 3px;">
+            <td><b>Flower:</b></td>
+            <td><b>Price</b></td>
+        </tr>
+    {% for flower in flowers %}
+        <tr>
+            <td style="font-size: large;">
+                {{flower.flower_type}}
+            </td>
+            <td style="font-size: large;"> -   {{flower.amount}}</td>
+        </tr>
+    {% endfor %}
+    </table>
+</body>
+</html>
