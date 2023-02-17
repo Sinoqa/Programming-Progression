@@ -1,15 +1,14 @@
 from flask_app.config.mysqlconnection import MySqlConnection, connectToMySql
 
-class User:
+class Flower:
 
     db = "shopping"
 
 
     def __init__(self, data):
         self.id = data['id']
-        self.first_name = data['first_name']
-        self.last_name = data['last_name']
-        self.phone_number = data['phone_number']
+        self.flower_type = data['flower_type']
+        self.amount = data['amount']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
 
@@ -17,24 +16,25 @@ class User:
 
 #CRUD CREATION OF DATABASE
     @classmethod
-    def create_buyer(cls, data):
-        query = 'INSERT INTO buyers (first_name, last_name, phone_number) values(%(first_name)s, %(last_name)s, %(phone_number)s); '
+    def create_flower(cls, data):
+        query = 'INSERT INTO flowers flower_type, amount values = %(flower_type)s, %(amount)s; '
         return MySqlConnection(cls.db).query_db(query,data)
-    
+
+
 
 #CRUD READING OF DATABASE
     @classmethod
-    def get_all_buyers(cls):
-        query = "SELECT * FROM buyers;"
+    def get_all_flowers(cls):
+        query = "SELECT * FROM flowers;"
         result = MySqlConnection(cls.db).query_db(query)
-        users = []
+        flowers = []
         print(result)
         for row in result:
-            users.append(cls(row))
-        return users
+            flowers.append(cls(row))
+        return flowers
     
     @classmethod
-    def get_buyer_by_id(cls, data):
+    def get_flower_by_id(cls, data):
         data = {'id':id}
         query = 'SELECT * FROM flowers WHERE id = %(id)s'
         return MySqlConnection(cls.db).query_db(query, data)
