@@ -1,0 +1,46 @@
+body  {background-color: antiquewhite;}
+
+header {background-color: rgb(210, 165, 106);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        
+
+    }
+header * {display: inline;}
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+
+}
+.headblock  {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.ytu {margin-right:auto;
+    font-size: 40px;}
+p {
+    font-family: 'Times New Roman', Times, sans-serif;
+    font-style: oblique;
+}
+.content {
+    margin-top: 80px;
+}
+
+.mid  {
+
+    background-color: aliceblue;
+    height: 200px;
+    width: 200px;
+}
+
+.bot {
+
+    background-color: rebeccapurple;
+    height: 200px;
+    width: 200px;
+}
